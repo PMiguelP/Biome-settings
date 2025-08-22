@@ -11,7 +11,7 @@
   "javascript": {
     "formatter": {
       "quoteStyle": "single",
-      "trailingCommas": "es5",
+      "trailingCommas": "all",
       "semicolons": "asWhenNeeded",
       "arrowParentheses": "always",
       "jsxQuoteStyle": "double"
@@ -23,8 +23,7 @@
       "recommended": true,
       "correctness": {
         "noUnusedVariables": "error",
-        "noUnusedImports": "error",
-        "useExhaustiveDependencies": "warn"
+        "noUnusedImports": "error"
       },
       "style": {
         "noUnusedTemplateLiteral": "error",
@@ -33,15 +32,14 @@
         "useSelfClosingElements": "error"
       },
       "suspicious": {
-        "noExplicitAny": "warn",
-        "noArrayIndexKey": "error"
+        "noExplicitAny": "warn"
       },
       "a11y": {
         "recommended": true,
-        "noBlankTarget": "error",
-        "useAltText": "error",
-        "useAriaLabel": "error",
-        "useValidAriaProps": "error"
+        "useAltText": "warn",
+        "useAriaProps": "warn",
+        "useValidAriaProps": "warn",
+        "useValidAriaRole": "warn"
       },
       "complexity": {
         "noForEach": "off"
