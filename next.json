@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.0/schema.json",
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
   "formatter": {
     "enabled": true,
     "formatWithErrors": false,
@@ -23,23 +23,30 @@
       "recommended": true,
       "correctness": {
         "noUnusedVariables": "error",
-        "noUnusedImports": "error"
+        "noUnusedImports": "error",
+        "useExhaustiveDependencies": "warn",
+        "useHookAtTopLevel": "error"
       },
       "style": {
         "noUnusedTemplateLiteral": "error",
         "useImportType": "error",
         "useConsistentArrayType": "error",
-        "useSelfClosingElements": "error"
+        "useSelfClosingElements": "error",
+        "useFragmentSyntax": "error"
       },
       "suspicious": {
-        "noExplicitAny": "warn"
+        "noExplicitAny": "warn",
+        "noArrayIndexKey": "warn"
       },
       "a11y": {
         "recommended": true,
         "useAltText": "warn",
         "useAriaProps": "warn",
         "useValidAriaProps": "warn",
-        "useValidAriaRole": "warn"
+        "useValidAriaRole": "warn",
+        "useKeyWithClickEvents": "warn",
+        "useKeyWithMouseEvents": "warn",
+        "noBlankTarget": "error"
       },
       "complexity": {
         "noForEach": "off"
@@ -51,6 +58,26 @@
   },
   "files": {
     "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
-    "ignore": ["node_modules/**", "dist/**", "build/**", "coverage/**", ".next/**"]
-  }
+    "ignore": [
+      "node_modules/**", 
+      "dist/**", 
+      "build/**", 
+      "coverage/**", 
+      ".next/**",
+      "out/**",
+      "public/**"
+    ]
+  },
+  "overrides": [
+    {
+      "includes": ["pages/**", "app/**"],
+      "linter": {
+        "rules": {
+          "style": {
+            "useFilenamingConvention": "off"
+          }
+        }
+      }
+    }
+  ]
 }
