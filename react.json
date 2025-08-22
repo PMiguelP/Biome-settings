@@ -23,23 +23,30 @@
       "recommended": true,
       "correctness": {
         "noUnusedVariables": "error",
-        "noUnusedImports": "error"
+        "noUnusedImports": "error",
+        "useExhaustiveDependencies": "warn",
+        "useHookAtTopLevel": "error"
       },
       "style": {
         "noUnusedTemplateLiteral": "error",
         "useImportType": "error",
         "useConsistentArrayType": "error",
-        "useSelfClosingElements": "error"
+        "useSelfClosingElements": "error",
+        "useFragmentSyntax": "error"
       },
       "suspicious": {
-        "noExplicitAny": "warn"
+        "noExplicitAny": "warn",
+        "noArrayIndexKey": "warn"
       },
       "a11y": {
         "recommended": true,
+        "noBlankTarget": "error",
         "useAltText": "warn",
         "useAriaProps": "warn",
         "useValidAriaProps": "warn",
-        "useValidAriaRole": "warn"
+        "useValidAriaRole": "warn",
+        "useKeyWithClickEvents": "warn",
+        "useKeyWithMouseEvents": "warn"
       },
       "complexity": {
         "noForEach": "off"
@@ -51,6 +58,6 @@
   },
   "files": {
     "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
-    "ignore": ["node_modules/**", "dist/**", "build/**", "coverage/**", ".next/**"]
+    "ignore": ["node_modules/**", "dist/**", "build/**", "coverage/**", "**/__tests__/**", "**/*.test.*", "**/*.spec.*"]
   }
 }
