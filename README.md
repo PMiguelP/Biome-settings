@@ -198,53 +198,52 @@ Create `biome.json`:
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.0/schema.json",
-  "formatter": {
-    "enabled": true,
-    "formatWithErrors": false,
-    "indentStyle": "space",
-    "indentWidth": 2,
-    "lineWidth": 80,
-    "lineEnding": "lf"
-  },
-  "javascript": {
-    "formatter": {
-      "quoteStyle": "single",
-      "trailingCommas": "es5",
-      "semicolons": "asWhenNeeded",
-      "arrowParentheses": "always"
-    }
-  },
-  "linter": {
-    "enabled": true,
-    "rules": {
-      "recommended": true,
-      "correctness": {
-        "noUnusedVariables": "error",
-        "noUnusedImports": "error"
-      },
-      "style": {
-        "noUnusedTemplateLiteral": "error",
-        "useImportType": "error",
-        "useConsistentArrayType": "error",
-        "useForOf": "error"
-      },
-      "suspicious": {
-        "noExplicitAny": "warn",
-        "noArrayIndexKey": "off"
-      },
-      "complexity": {
-        "noForEach": "off"
-      }
-    }
-  },
-  "organizeImports": {
-    "enabled": true
-  },
-  "files": {
-    "include": ["**/*.js", "**/*.ts", "**/*.mjs"],
-    "ignore": ["node_modules/**", "dist/**", "build/**", "coverage/**"]
-  }
+	"$schema": "https://biomejs.dev/schemas/1.9.0/schema.json",
+	"formatter": {
+		"enabled": true,
+		"formatWithErrors": false,
+		"indentStyle": "space",
+		"indentWidth": 2,
+		"lineWidth": 80,
+		"lineEnding": "lf"
+	},
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "single",
+			"trailingCommas": "all",
+			"semicolons": "asNeeded",
+			"arrowParentheses": "always"
+		}
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"style": {
+				"noUnusedTemplateLiteral": "error",
+				"useImportType": "error"
+			},
+			"suspicious": {
+				"noExplicitAny": "warn"
+			}
+		}
+	},
+	"organizeImports": {
+		"enabled": true
+	},
+	"files": {
+		"include": [
+			"**/*.ts",
+			"**/*.tsx",
+			"**/*.js",
+			"**/*.jsx"
+		],
+		"ignore": [
+			"node_modules/**",
+			"dist/**",
+			"build/**"
+		]
+	}
 }
 ```
 
