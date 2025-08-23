@@ -26,7 +26,7 @@ Create `biome.json`:
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.0/schema.json",
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
   "formatter": {
     "enabled": true,
     "formatWithErrors": false,
@@ -38,8 +38,8 @@ Create `biome.json`:
   "javascript": {
     "formatter": {
       "quoteStyle": "single",
-      "trailingCommas": "es5",
-      "semicolons": "asWhenNeeded",
+      "trailingCommas": "all",
+      "semicolons": "asNeeded",
       "arrowParentheses": "always",
       "jsxQuoteStyle": "double"
     }
@@ -51,24 +51,29 @@ Create `biome.json`:
       "correctness": {
         "noUnusedVariables": "error",
         "noUnusedImports": "error",
-        "useExhaustiveDependencies": "warn"
+        "useExhaustiveDependencies": "warn",
+        "useHookAtTopLevel": "error"
       },
       "style": {
         "noUnusedTemplateLiteral": "error",
         "useImportType": "error",
         "useConsistentArrayType": "error",
-        "useSelfClosingElements": "error"
+        "useSelfClosingElements": "error",
+        "useFragmentSyntax": "error"
       },
       "suspicious": {
         "noExplicitAny": "warn",
-        "noArrayIndexKey": "error"
+        "noArrayIndexKey": "warn"
       },
       "a11y": {
         "recommended": true,
-        "noBlankTarget": "error",
-        "useAltText": "error",
-        "useAriaLabel": "error",
-        "useValidAriaProps": "error"
+        "useAltText": "warn",
+        "useAriaProps": "warn",
+        "useValidAriaProps": "warn",
+        "useValidAriaRole": "warn",
+        "useKeyWithClickEvents": "warn",
+        "useKeyWithMouseEvents": "warn",
+        "noBlankTarget": "error"
       },
       "complexity": {
         "noForEach": "off"
@@ -80,8 +85,28 @@ Create `biome.json`:
   },
   "files": {
     "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
-    "ignore": ["node_modules/**", "dist/**", "build/**", "coverage/**", ".next/**"]
-  }
+    "ignore": [
+      "node_modules/**", 
+      "dist/**", 
+      "build/**", 
+      "coverage/**", 
+      ".next/**",
+      "out/**",
+      "public/**"
+    ]
+  },
+  "overrides": [
+    {
+      "includes": ["pages/**", "app/**"],
+      "linter": {
+        "rules": {
+          "style": {
+            "useFilenamingConvention": "off"
+          }
+        }
+      }
+    }
+  ]
 }
 ```
 
