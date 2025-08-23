@@ -134,8 +134,8 @@ Create `biome.json`:
   "javascript": {
     "formatter": {
       "quoteStyle": "single",
-      "trailingCommas": "es5",
-      "semicolons": "asWhenNeeded",
+      "trailingCommas": "all",
+      "semicolons": "asNeeded",
       "arrowParentheses": "always",
       "jsxQuoteStyle": "double"
     }
@@ -147,24 +147,29 @@ Create `biome.json`:
       "correctness": {
         "noUnusedVariables": "error",
         "noUnusedImports": "error",
-        "useExhaustiveDependencies": "warn"
+        "useExhaustiveDependencies": "warn",
+        "useHookAtTopLevel": "error"
       },
       "style": {
         "noUnusedTemplateLiteral": "error",
         "useImportType": "error",
         "useConsistentArrayType": "error",
-        "useSelfClosingElements": "error"
+        "useSelfClosingElements": "error",
+        "useFragmentSyntax": "error"
       },
       "suspicious": {
         "noExplicitAny": "warn",
-        "noArrayIndexKey": "error"
+        "noArrayIndexKey": "warn"
       },
       "a11y": {
         "recommended": true,
         "noBlankTarget": "error",
-        "useAltText": "error",
-        "useAriaLabel": "error",
-        "useValidAriaProps": "error"
+        "useAltText": "warn",
+        "useAriaProps": "warn",
+        "useValidAriaProps": "warn",
+        "useValidAriaRole": "warn",
+        "useKeyWithClickEvents": "warn",
+        "useKeyWithMouseEvents": "warn"
       },
       "complexity": {
         "noForEach": "off"
@@ -176,7 +181,7 @@ Create `biome.json`:
   },
   "files": {
     "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
-    "ignore": ["node_modules/**", "dist/**", "build/**", "coverage/**"]
+    "ignore": ["node_modules/**", "dist/**", "build/**", "coverage/**", "**/__tests__/**", "**/*.test.*", "**/*.spec.*"]
   }
 }
 ```
