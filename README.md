@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="logo.png" alt="Biome Logo" width="1500" height="200"/>
+</p>
+
 # Biome (ESLint + Prettier Replacement)
 
 A modern, fast, and simple alternative to ESLint + Prettier using Biome.
